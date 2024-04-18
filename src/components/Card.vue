@@ -17,7 +17,11 @@ export default {
       <img v-if="info.original_language === 'en'" src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/be/Flag_of_England.svg/1200px-Flag_of_England.svg.png">
       <img v-else :src="'https://flagsapi.com/' + info.original_language.toUpperCase() + '/flat/64.png'" :alt=info.original_language.toUpperCase()>
     </div>
-    <p>{{info.vote_average}}</p>
+    <p>{{ Math.floor(info.vote_average / 2) }}</p>
+    <!--stampo 5 stelle con un ciclo for e gli applico il colore giallo a seconda del vote.average/2-->
+    <div class="rating">
+        <span v-for="i in 5" :class="{ 'fas fa-star': i <= Math.floor(info.vote_average / 2), 'far fa-star': i > Math.floor(info.vote_average / 2) }"></span>
+      </div>
   </div>
 </div>
 </template>
@@ -32,5 +36,12 @@ export default {
   img{
     width: 100%;
   }
+
+}
+.rating {
+  color: #FFD700; 
+}
+.rating .far {
+  color: #ccc; 
 }
 </style>
