@@ -8,7 +8,7 @@ export default {
 
 <template>
 <div class="card">
-  <img class="card-img-top" src="https://upload.wikimedia.org/wikipedia/en/3/3d/Saturo_Gojo.png" alt="Card image cap">
+  <img class="card-img-top" :src="'https://image.tmdb.org/t/p/w342' + info.poster_path" alt="Card image cap">
   <div class="card-body">
     <h4 class="card-title">{{ info.name }}</h4>
     <h5 class="card-title">{{ info.original_name }}</h5>
