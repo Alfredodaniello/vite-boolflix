@@ -17,16 +17,25 @@ export default {
 </script>
 
 <template>
-<div class="card-container d-flex flex-wrap">
-    <!--Per ogni film ottenuto dalla chiamata all'api creo un componente Card-->
-    <Card v-for="film in store.films" :info="film" :key="film.id"></Card>
-    <!--Per ogni serie ottenuta dalla chiamata all'api creo un componente Card-->
-    <CardSeries v-for="serie in store.series" :info="serie" :key="serie.id"></CardSeries>
-</div>
-</template>
+    <div class="container">
+      <div class="card-container d-flex flex-wrap justify-content-center">
+        <!--Per ogni film ottenuto dalla chiamata all'api creo un componente Card-->
+        <Card v-for="film in store.films" :info="film" :key="film.id"></Card>
+        <!--Per ogni serie ottenuta dalla chiamata all'api creo un componente Card-->
+        <CardSeries v-for="serie in store.series" :info="serie" :key="serie.id"></CardSeries>
+      </div>
+    </div>
+  </template>
+  
+  <style scoped lang="scss">
+  .card-container {
+    margin: auto; 
+    gap: 25px; 
+  }
 
-<style scoped lang="scss">
-.card-container {
-    gap: 25px
-}
-</style>
+  .container {
+    padding-top: 100px;
+    padding-bottom: 20px;
+  }
+  </style>
+  

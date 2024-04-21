@@ -9,7 +9,8 @@ export default {
 <template>
 <div class="card">
   <img class="card-img-top" :src="'https://image.tmdb.org/t/p/w342' + info.poster_path" alt="Card image cap">
-  <div class="card-body">
+  <div class="description">
+    <div class="card-body">
     <h4 class="card-title">{{ info.name }}</h4>
     <h5 class="card-title">{{ info.original_name }}</h5>
     <div class="img-container">
@@ -22,24 +23,70 @@ export default {
         <span v-for="i in 5" :class="{ 'fas fa-star': i <= Math.floor(info.vote_average / 2), 'far fa-star': i > Math.floor(info.vote_average / 2) }"></span>
       </div>
   </div>
+  </div>
 </div>
 </template>
 
 <style scoped lang="scss">
 .card {
     width: calc(100% / 5 - 20px);
+    border: red; 
 }
+
+
 .img-container {
-  width: 50px;
-  height: 75px;
-  img{
-    width: 100%;
-  }
+    width: 50px;
+    height: 75px;
+    img {
+        width: 100%;
+    }
 }
-    .rating {
-    color: #FFD700; 
+
+.rating {
+    color: #FFD700;
 }
+
 .rating .far {
-  color: #ccc; 
+    color: #ccc;
 }
+.description {
+  color: white;
+  min-height: 358.800px;
+  display: none;
+  background-color: rgba(0, 0, 0, 0.9);; 
+}
+.card:hover {
+ .card-img-top {
+  display: none;
+ }
+ .description {
+  display: block;
+ }
+}
+
+@media screen and (max-width: 1200px) {
+    .card {
+        width: calc(100% / 4 - 20px); 
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .card {
+        width: calc(100% / 3 - 20px); 
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .card {
+        width: calc(100% / 2 - 20px); 
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .card {
+        width: 100%; 
+        margin-bottom: 20px; 
+    }
+}
+
 </style>

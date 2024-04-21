@@ -56,10 +56,19 @@ export default {
 </script>
 
 <template>
-  <AppSearch @searchPerformed="getFilms"></AppSearch>
-  <CardContainer></CardContainer>
+    <header>
+        <AppSearch @searchPerformed="getFilms"></AppSearch>
+    </header>
+  
+  <main>
+    <CardContainer></CardContainer>
+  </main>
+  
 </template>
 
 <style>
+main {
+    background-color: black;
+}
 
 </style>
