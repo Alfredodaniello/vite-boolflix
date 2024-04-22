@@ -17,7 +17,7 @@ export default {
 </script>
 
 <template>
-    <div class="container">
+        <div class="container">
       <div class="card-container d-flex flex-wrap justify-content-center">
         <!--Per ogni film ottenuto dalla chiamata all'api creo un componente Card-->
         <Card v-for="film in store.films" :info="film" :key="film.id"></Card>
@@ -25,6 +25,7 @@ export default {
         <CardSeries v-for="serie in store.series" :info="serie" :key="serie.id"></CardSeries>
       </div>
     </div>
+    
   </template>
   
   <style scoped lang="scss">
@@ -32,10 +33,9 @@ export default {
     margin: auto; 
     gap: 25px; 
   }
+.container {
+    margin-top: 70px;
+}
 
-  .container {
-    padding-top: 100px;
-    padding-bottom: 20px;
-  }
   </style>
   

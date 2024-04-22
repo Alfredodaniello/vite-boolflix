@@ -47,5 +47,6 @@ width: 100%;
   background-color: rgb(212, 0, 0);
   height: 70px;
 box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1)
-}        
+}  
+      
 </style>
